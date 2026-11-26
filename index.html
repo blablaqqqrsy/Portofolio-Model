@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PORTFOLIO — Venny Dinata (Model &amp; Muse)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,600;1,700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg-main: #0b0b0c;
+      --bg-card: #131316;
+      --bg-card-alt: #18181c;
+      --text-main: #f5f5f7;
+      --text-muted: #b8b8c2;
+      --accent-red: #b91c1c;
+      --accent-crimson: #991b1b;
+      --border-subtle: rgba(255, 255, 255, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px 64px;
+    }
+
+    /* Top Nav */
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .brand-tag {
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fca5a5;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    /* Hero Block */
+    .hero {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 24px 18px 28px;
+      overflow: hidden;
+    }
+
+    .hero-title {
+      font-family: "Anton", sans-serif;
+      font-size: clamp(3.2rem, 13vw, 9.5rem);
+      line-height: 0.86;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--text-main);
+      position: relative;
+      z-index: 2;
+      user-select: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: end;
+      margin-top: -12px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+      max-width: 440px;
+      width: 100%;
+      margin: 0 auto;
+      aspect-ratio: 4 / 5;
+      background: var(--accent-red);
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+    }
+
+    .hero-bio {
+      max-width: 380px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .script-name {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: clamp(2.1rem, 5vw, 3.3rem);
+      line-height: 1.05;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .hero-bio p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .hero-location {
+      margin-top: 12px;
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fca5a5;
+      border-left: 3px solid var(--accent-red);
+      padding-left: 10px;
+    }
+
+    /* Section Grid */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .panel-alt {
+      background: var(--bg-card-alt);
+    }
+
+    /* Intro & Measurements */
+    .intro-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .section-heading {
+      font-family: "Anton", sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+    }
+
+    .section-heading .script-inline {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      text-transform: none;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      color: #fca5a5;
+      margin-top: 2px;
+    }
+
+    .stats-box {
+      background: #0f0f12;
+      border-left: 3px solid var(--accent-red);
+      padding: 14px;
+    }
+
+    .stats-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fca5a5;
+      margin-bottom: 10px;
+    }
+
+    .stats-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 14px;
+      font-size: 0.86rem;
+    }
+
+    .stats-list li span {
+      color: var(--text-muted);
+      display: block;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .mini-thumbs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .thumb-card {
+      aspect-ratio: 3 / 4;
+      background: #1e1e24;
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* Project / Experience Cards (Horizontal Split like Let's Work Together) */
+    .project-card,
+    .project-card2,
+    .project-card3,
+    .project-card4 {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .project-label,
+    .project-label2,
+    .project-label3,
+    .project-label4 {
+      font-family: "Anton", sans-serif;
+      font-size: clamp(2.1rem, 4.5vw, 3.1rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .project-sub,
+    .project-sub2,
+    .project-sub3,
+    .project-sub4 {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: #fca5a5;
+      margin-bottom: 10px;
+    }
+
+    .project-desc,
+    .project-desc2,
+    .project-desc3,
+    .project-desc4 {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .project-meta,
+    .project-meta2,
+    .project-meta3,
+    .project-meta4 {
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: #d4d4dc;
+      opacity: 0.88;
+    }
+
+    /* 2-Foto: Layout menyamping seperti Let's Work Together */
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    /* 3-Foto */
+    .project-gallery2,
+    .project-gallery3,
+    .project-gallery4 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .photo-slot,
+    .photo-slot2,
+    .photo-slot3,
+    .photo-slot4 {
+      aspect-ratio: 4 / 5;
+      background: #1e1e24;
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .photo-slot:hover,
+    .photo-slot2:hover,
+    .photo-slot3:hover,
+    .photo-slot4:hover {
+      transform: translateY(-2px);
+      border-color: rgba(252, 165, 165, 0.55);
+    }
+
+    /* Rate Card Section */
+    .rate-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .rate-highlight {
+      background: #0f0f12;
+      border-left: 3px solid var(--accent-red);
+      padding: 16px 18px;
+    }
+
+    .rate-tier {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fca5a5;
+    }
+
+    .rate-price {
+      font-family: "Anton", sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.05;
+      color: var(--text-main);
+      margin: 6px 0;
+    }
+
+    .rate-price span {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .rate-notes {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .rate-notes li::before {
+      content: "• ";
+      color: #fca5a5;
+      font-weight: 700;
+    }
+
+    /* Contact / Footer Block */
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.92rem;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-main);
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    .contact-links a:hover {
+      color: #fca5a5;
+      border-bottom-color: #fca5a5;
+    }
+
+    .contact-collage {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 999;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 680px;
+      max-height: 88vh;
+      width: 100%;
+      background: #121215;
+      border: 1px solid var(--border-subtle);
+      padding: 12px;
+    }
+
+    .lightbox-inner img {
+      max-height: 78vh;
+      width: auto;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      background: var(--accent-red);
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Responsive Breakpoints */
+   @media (min-width: 768px) {
+      .container {
+        padding: 28px 24px 72px;
+      }
+
+      .hero {
+        padding: 32px 32px 36px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        margin-top: -28px;
+        gap: 28px;
+      }
+
+      .hero-bio {
+        margin: 0 0 12px auto;
+      }
+
+      /* Intro & Project 01 tetap berdampingan */
+      .bento-grid.intro-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* Project 01, 02, 03 melebar penuh 1 baris (teks kiri, 2 foto kanan) */
+      .bento-grid.projects-row,
+      .project-card {
+        grid-template-columns: 1fr 1.15fr;
+        padding: 24px;
+      }
+
+      /* Kartu 3-foto juga menyamping rapi di desktop */
+      .project-card2,
+      .project-card3,
+      .project-card4 {
+        grid-template-columns: 0.85fr 1.15fr;
+        padding: 24px;
+      }
+
+      .rate-card,
+      .contact-card {
+        grid-template-columns: 1fr 1fr;
+        padding: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigasi Singkat -->
+    <header class="topbar">
+      <div class="brand-tag">MODEL &amp; MUSE BOOK</div>
+      <nav class="nav-links">
+        <a href="#intro">Intro &amp; Stats</a>
+        <a href="#projects">Pengalaman</a>
+        <a href="#rate-card">Rate Card</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </header>
+
+    <!-- Bagian Utama / Hero -->
+    <section class="hero">
+      <h1 class="hero-title">PORTFOLIO</h1>
+
+      <div class="hero-grid">
+        <div class="hero-photo-wrap">
+          <img
+            src="./assets/DSC03009-2.JPEG"
+            alt="Foto utama model"
+            onclick="openLightbox(this.src, this.alt)"
+            style="cursor: pointer;"
+          />
+        </div>
+
+        <div class="hero-bio">
+          <div class="script-name">Venny Dinata</div>
+          <p>
+            Saya adalah freelance model &amp; muse dengan pengalaman di sesi latihan
+            makeup bersama MUA serta pemotretan eksplorasi tema dan konsep baru.
+            Terbiasa menyesuaikan ekspresi, pose, dan arah gaya sesuai konsep
+            fotografer maupun makeup artist.
+          </p>
+          <div class="hero-location">Based in Surabaya & Banjarmasin, Indonesia</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro & Pengalaman 01 -->
+    <section id="intro" class="bento-grid">
+      <div class="panel">
+        <div class="intro-layout">
+          <div>
+            <h2 class="section-heading">
+              INTRODUCTION
+              <span class="script-inline">Tentang &amp; Profil</span>
+            </h2>
+          </div>
+
+          <div class="stats-box">
+            <div class="stats-title">Identitas &amp; Ukuran</div>
+            <ul class="stats-list">
+              <li><span>Based Location</span>Surabaya, ID</li>
+              <li><span>Tinggi Badan</span>160 cm</li>
+              <li><span>Berat Badan</span>55 kg</li>
+              <li><span>Warna Rambut</span>Hitam &amp; Pirang</li>
+              <li><span>Warna Mata</span>Cokelat Gelap</li>
+              <li><span>Ukuran Baju / Sepatu</span>S–M / 39–40</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mini-thumbs">
+          <div class="thumb-card">
+            <img
+              src="./assets/IMG_5243.JPG"
+              alt="Portrait 1"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+          <div class="thumb-card">
+            <img
+              src="./assets/IMG_2256.JPG"
+              alt="Portrait 2"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+          <div class="thumb-card">
+            <img
+              src="./assets/0CC27700-7752-4CC2-919C-1AEEC16EF19C.jpg"
+              alt="Portrait 3"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Pengalaman 01 (2 Foto Menyamping) -->
+      <article id="projects" class="project-card panel-alt">
+        <div>
+          <div class="project-label">PROJECT 01</div>
+          <div class="project-sub">Makeup &amp; Beauty Sessions</div>
+          <p class="project-desc">
+            Terlibat sebagai muse makeup dengan eksplorasi gaya Thailand look yang
+            fresh dan bernuansa pesta anak muda. Menghadirkan ekspresi yang ceria,
+            clean, dan confident dengan sentuhan playful agar detail riasan tetap
+            terlihat segar dan maksimal di kamera.
+          </p>
+          <div class="project-meta">Role: Model · MUA: @dellayangs_makeupbjm</div>
+        </div>
+
+        <div class="project-gallery">
+          <div class="photo-slot">
+            <img
+              src="./assets/WhatsApp Image 2026-11-26 at 11.27.45.jpeg"
+              alt="Project 01 Foto 1"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+          <div class="photo-slot">
+            <img
+              src="./assets/WhatsApp Image 2026-11-23 at 20.12.41.jpeg"
+              alt="Project 01 Foto 2"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Pengalaman 02 & 03 (2 Foto Menyamping) -->
+    <section class="bento-grid">
+      <!-- Pengalaman 02 -->
+      <article class="project-card">
+        <div>
+          <div class="project-label">PROJECT 02</div>
+          <div class="project-sub">Makeup &amp; Beauty Sessions</div>
+          <p class="project-desc">
+            Eksplorasi Thai look dengan sentuhan elegan menonjolkan riasan mata,
+            complexion yang halus dan bercahaya, serta ekspresi tenang dan
+            berkelas. Dirancang agar detail wajah tetap terlihat jelas dan estetik
+            di kamera.
+          </p>
+          <div class="project-meta">Role: Muse · MUA: @ruthyachangmakeup</div>
+        </div>
+
+        <div class="project-gallery">
+          <div class="photo-slot">
+            <img
+              src="./assets/WhatsApp Image 2026-11-23 at 20.12.55.jpeg"
+              alt="Project 02 Foto 1"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+          <div class="photo-slot">
+            <img
+              src="./assets/IMG_2321.PNG"
+              alt="Project 02 Foto 2"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+        </div>
+      </article>
+
+      <!-- Pengalaman 03 -->
+      <article class="project-card panel-alt">
+        <div>
+          <div class="project-label">PROJECT 03</div>
+          <div class="project-sub">Sister of Bride Look Concept</div>
+          <p class="project-desc">
+            Tampil sebagai sister of the bride di hari pernikahan dengan nuansa
+            anggun, rapi, dan penuh kehangatan. Menyesuaikan tampilan riasan,
+            busana, serta ekspresi yang selaras dengan suasana perayaan dan momen
+            foto keluarga maupun potret personal.
+          </p>
+          <div class="project-meta">
+            Role: Model Photoshoot · Campaign: studio.sparkle · MUA: @agnezchristi_makeupart
+          </div>
+        </div>
+
+        <div class="project-gallery">
+          <div class="photo-slot">
+            <img
+              src="./assets/54E84390-92B7-4083-9155-632A5F0A92C6.JPEG"
+              alt="Project 03 Foto 1"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+          <div class="photo-slot">
+            <img
+              src="./assets/653844C0-5395-484E-B3B6-EDDE30FE5585.JPEG"
+              alt="Project 03 Foto 2"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Project 04 (3 Foto) -->
+    <section class="bento-grid">
+      <article class="project-card2 panel-alt" style="grid-column: 1 / -1;">
+        <div>
+          <div class="project-label2">PROJECT 04</div>
+          <div class="project-sub2">Studio Editorial / Modern Chic</div>
+          <p class="project-desc2">
+            Pemotretan studio editorial dengan nuansa serba hitam yang modern dan
+            bold. Memadukan pose dinamis, detail busana cropped blazer, rok mini,
+            sheer tights, dan heels dengan ekspresi fokus yang menonjolkan siluet
+            dan karakter visual.
+          </p>
+          <div class="project-meta2">
+            Role: Model Photoshoot · Campaign: Chapter 24 · MUA: @ade.makeupartist
+          </div>
+        </div>
+
+        <div class="project-gallery2">
+          <div class="photo-slot2">
+            <img
+              src="./assets/DSC02853-2.JPEG"
+              alt="Project 04 Foto 1"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+          <div class="photo-slot2">
+            <img
+              src="./assets/DSC03053.JPEG"
+              alt="Project 04 Foto 2"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+          <div class="photo-slot2">
+            <img
+              src="./assets/DSC02882.JPEG"
+              alt="Project 04 Foto 3"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Project 05 (3 Foto) -->
+    <section class="bento-grid">
+      <article class="project-card3" style="grid-column: 1 / -1;">
+        <div>
+          <div class="project-label3">PROJECT 05</div>
+          <div class="project-sub3">Frozen Concept</div>
+          <p class="project-desc3">
+            Pemotretan bertema frozen concept dengan nuansa biru dingin dan efek
+            butiran cahaya menyerupai salju. Memadukan gaun biru muda, hiasan
+            kepala bernuansa es dan bunga, aksen rambut biru, serta pose dan
+            ekspresi yang lembut untuk membangun atmosfer musim dingin yang magis.
+          </p>
+          <div class="project-meta3">
+            Role: Model Photoshoot · Campaign: Studio Sparkle · MUA: @agnezchristi_makeupart
+          </div>
+        </div>
+
+        <div class="project-gallery3">
+          <div class="photo-slot3">
+            <img
+              src="./assets/WhatsApp Image 2026-11-23 at 20.12.51.jpeg"
+              alt="Project 05 Foto 1"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+          <div class="photo-slot3">
+            <img
+              src="./assets/WhatsApp Image 2026-11-23 at 20.12.52 (1).jpeg"
+              alt="Project 05 Foto 2"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+          <div class="photo-slot3">
+            <img
+              src="./assets/WhatsApp Image 2026-11-23 at 20.12.50 (1).jpeg"
+              alt="Project 05 Foto 3"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Project 06 (3 Foto) -->
+    <section class="bento-grid">
+      <article class="project-card4 panel-alt" style="grid-column: 1 / -1;">
+        <div>
+          <div class="project-label4">PROJECT 06</div>
+          <div class="project-sub4">Birthday Party Photoshoot</div>
+          <p class="project-desc4">
+            Pemotretan bertema birthday party look dengan dua pendekatan gaya
+            yang berbeda—mulai dari nuansa glam klasik yang elegan hingga nuansa
+            festive yang meriah dan berkilau. Menyesuaikan ekspresi, pose, serta
+            properti di setiap set agar karakter perayaannya terasa hidup di kamera.
+          </p>
+          <div class="project-meta4">
+            Role: Model Photoshoot · Campaign: Studio Sparkle · MUA: @dellayangs_makeupbjm
+          </div>
+        </div>
+
+        <div class="project-gallery4">
+          <div class="photo-slot4">
+            <img
+              src="./assets/IMG_6609.PNG"
+              alt="Project 06 Foto 1"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+          <div class="photo-slot4">
+            <img
+              src="./assets/IMG_6607.PNG"
+              alt="Project 06 Foto 2"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+          <div class="photo-slot4">
+            <img
+              src="./assets/IMG_6605.PNG"
+              alt="Project 06 Foto 3"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Rate Card -->
+    <section id="rate-card" class="bento-grid">
+      <div class="rate-card" style="grid-column: 1 / -1;">
+        <div>
+          <h2 class="section-heading">
+            RATE CARD
+            <span class="script-inline">Beginner Model / Muse</span>
+          </h2>
+          <p class="project-desc" style="margin-top: 10px;">
+            Tarif transparan dan fleksibel untuk sesi pemotretan, eksplorasi
+            konsep, maupun sesi muse makeup di area Surabaya dan sekitarnya.
+          </p>
+        </div>
+
+        <div class="rate-highlight">
+          <div class="rate-tier">Beginner Model / Muse Rate</div>
+          <div class="rate-price">Rp 75.000 <span>/ jam</span></div>
+          <ul class="rate-notes">
+            <li>Based di Surabaya, Indonesia</li>
+            <li>Cocok untuk photoshoot konsep, lookbook, &amp; sesi muse/makeup</li>
+            <li>Detail durasi, transport/lokasi, dan kebutuhan wardrobe bisa dibicarakan via DM/WA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak / Let's Work Together -->
+    <section id="contact" class="bento-grid">
+      <div class="contact-card" style="grid-column: 1 / -1;">
+        <div>
+          <h2 class="section-heading">
+            LET'S WORK
+            <span class="script-inline">TOGETHER</span>
+          </h2>
+          <p class="project-desc" style="margin: 10px 0 16px;">
+            Based in Surabaya · Terbuka untuk pemotretan editorial, lookbook
+            brand, muse, dan kolaborasi kreatif.
+          </p>
+          <ul class="contact-links">
+            <li>
+              <a
+                href="https://www.instagram.com/vennydinata_?knvt=MWZ3ZTBmbW10MHE5ZA%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noreferrer"
+              >IG · @vennydinata_</a>
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com/@blablaqqqrsy"
+                target="_blank"
+                rel="noreferrer"
+              >TT · @blablaqqqrsy</a>
+            </li>
+            <li>
+              <a href="mailto:vennydinata72@gmail.com">Email · vennydinata72@gmail.com</a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/6281250578523"
+                target="_blank"
+                rel="noreferrer"
+              >WhatsApp · +62 812-5057-8523</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-collage">
+          <div class="photo-slot">
+            <img
+              src="./assets/B7D84E3F-CFDF-40B8-BD28-6F7D91756735.JPG"
+              alt="Kontak Foto 1"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+          <div class="photo-slot">
+            <img
+              src="./assets/WhatsApp Image 2026-11-23 at 20.12.44.jpeg"
+              alt="Kontak Foto 2"
+              onclick="openLightbox(this.src, this.alt)"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      Based in Surabaya & Banjarmasin, Indonesia · Klik foto mana pun untuk melihat ukuran penuh
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner" onclick="event.stopPropagation()">
+      <button class="lightbox-close" type="button" onclick="closeLightbox()">Tutup</button>
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+  </div>
+
+  <script>
+    function openLightbox(src, alt) {
+      const box = document.getElementById("lightbox");
+      const img = document.getElementById("lightbox-img");
+      img.src = src;
+      img.alt = alt || "Foto Portofolio";
+      box.classList.add("open");
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.remove("open");
+    }
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
